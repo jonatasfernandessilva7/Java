@@ -18,8 +18,6 @@ public class sequenciaEmPares {
         tamanhoDireitoDefinidoPeloUsuario = input.nextInt();
 
 
-        int sequencia[][] = new int[tamanhoDireitoDefinidoPeloUsuario][tamanhoEsquerdoDefinidoPeloUsuario];
-
         for (int i = 0; i < tamanhoDireitoDefinidoPeloUsuario; i++){
             for (int j = i; j < tamanhoEsquerdoDefinidoPeloUsuario ; j++){
                 System.out.println(i + " " + j);

@@ -7,16 +7,26 @@ public class Main {
 
         int[] vetor = {1,2,3,4,5,6,7,8,9,10};
 
-        System.out.print(somaVetor(vetor));
+        System.out.println("a soma dos numeros do vetor eh: "+somaVetor(vetor));
+        System.out.println("a media dos numero do vetor eh: "+mediaDoVetor(vetor));
     }
 
-    public static int somaVetor(int[] vetor){
+    public static double somaVetor(int[] vetor){
 
-        int somaDosNumerosDoVetor = 0;
+        double somaDosNumerosDoVetor = 0;
 
         for (int i:vetor){
             somaDosNumerosDoVetor += i;
         }
         return somaDosNumerosDoVetor;
+    }
+
+    public static double mediaDoVetor(int[] vetor){
+
+        double mediaDosNumemerosDoVetor;
+
+        mediaDosNumemerosDoVetor = somaVetor(vetor)/vetor.length;
+
+        return mediaDosNumemerosDoVetor;
     }
 }

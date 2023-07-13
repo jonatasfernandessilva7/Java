@@ -13,11 +13,21 @@ public class Main {
         System.out.println("defina o tamanho do vetor: ");
         tamanhoDefinidoPeloUsuario = input.nextInt();
 
+        int tamanhoDoVetorDeMediasPonderadas;
+        System.out.println("defina o tamanho do vetor de pesos de media ponderada: ");
+        tamanhoDoVetorDeMediasPonderadas = input.nextInt();
+
         int[] vetor = new int[tamanhoDefinidoPeloUsuario];
+        int[] vetorDePesosMediaPonderada = new int[tamanhoDoVetorDeMediasPonderadas];
 
         for (int i  = 0; i < tamanhoDefinidoPeloUsuario; i++){
             System.out.println("adicione um numero ao vetor: ");
             vetor[i] = input.nextInt();
+        }
+
+        for (int i  = 0; i < tamanhoDoVetorDeMediasPonderadas; i++){
+            System.out.println("adicione um peso ao vetor: ");
+            vetorDePesosMediaPonderada[i] = input.nextInt();
         }
 
         System.out.println("a soma dos numeros do vetor eh: "+somaVetor(vetor));
@@ -26,6 +36,12 @@ public class Main {
         média dos valores presentes nos vetores.*/
 
         System.out.println("a media dos numero do vetor eh: "+mediaDoVetor(vetor));
+
+        /*Média ponderada: Sua função deverá receber um vetor de notas e um vetor
+        de pesos correspondentes. A função deve retornar a média ponderada das
+        notas. Exemplo: [7, 8, 6], [2, 3, 1] -> 7.33*/
+
+        System.out.println("a media ponderada eh: "+mediaPonderadaVetor(vetor, vetorDePesosMediaPonderada));
     }
 
     public static int somaVetor(int[] vetor){
@@ -43,4 +59,18 @@ public class Main {
         mediaDosNumemerosDoVetor = somaVetor(vetor)/vetor.length;
         return mediaDosNumemerosDoVetor;
     }
+
+    public static double mediaPonderadaVetor(int[] vetor, int[]  vetorDePesosDeMedia){
+
+        int somaVetorPesos = 0;
+        int somaDasMultiplicacoes = 0;
+
+        for ( int i = 0; i < vetor.length; i++){
+            somaDasMultiplicacoes += (vetor[i] * vetorDePesosDeMedia[i]);
+            somaVetorPesos += vetorDePesosDeMedia[i];
+        }
+
+        return (double) somaDasMultiplicacoes / somaVetorPesos;
+    }
+
 }
